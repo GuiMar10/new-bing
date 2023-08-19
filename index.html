@@ -24,16 +24,17 @@
         -ms-user-select: none; /* IE 10 and IE 11 */
         user-select: none; /* Standard syntax */
       }
-      a {
+      alink {
         background: -webkit-linear-gradient(bottom right, #34c4fb, #4bd9db);
         text-decoration: underline;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: font-size 0.2s ease, background 0.3s ease;
+        cursor: pointer;
       }
 
-      a:hover {
+      alink:hover {
         background: -webkit-linear-gradient(bottom right, #4bd9db, #34c4fb);
         background-clip: text;
         -webkit-background-clip: text;
@@ -100,7 +101,7 @@
       placeholder="Explore the world"
       onkeypress="access()"
     />
-    <p>Inspired by <a href="https://youtu.be/fVKIQwnHVO4">bkly</a>'s concept</p>
+    <p>Inspired by <alink onclick="bklylink()">bkly</alink>'s concept</p>
     <script>
       function access() {
         const input = window.document.querySelector("input#searchbar");
@@ -109,6 +110,9 @@
             window.open(`https://www.bing.com/search?q=${input.value}`);
           }
         }
+      }
+      function bklylink() {
+        window.open("https://youtu.be/fVKIQwnHVO4");
       }
     </script>
   </body>
