@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.thewindowsclub.com/wp-content/uploads/2020/11/Bing-Logo-1.png"
+    />
+    <title>Bing</title>
+    <style>
+      body {
+        background: url("https://wallpaperaccess.com/full/2109.jpg");
+        background-size: cover;
+        text-align: center;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      p {
+        color: aliceblue;
+        font-size: 13pt;
+        cursor: default;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      a {
+        background: -webkit-linear-gradient(bottom right, #34c4fb, #4bd9db);
+        text-decoration: underline;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: font-size 0.2s ease, background 0.3s ease;
+      }
+
+      a:hover {
+        background: -webkit-linear-gradient(bottom right, #4bd9db, #34c4fb);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 19pt;
+      }
+
+      br {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+      input#searchbar {
+        width: 70vh;
+        padding: 2vh;
+        border: none;
+        border-radius: 10px;
+        background: rgba(217, 217, 217, 0.164);
+        backdrop-filter: blur(8px);
+        color: white;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        cursor: default;
+        box-shadow: inset 0px 10px 20px 2px rgba(64, 84, 122, 0.25);
+        transition: all 0.3s ease;
+      }
+
+      input#searchbar:focus {
+        border: none;
+        outline: none;
+        box-shadow: inset 0px 5px 10px 0px rgba(57, 100, 139, 0.5);
+        background: rgba(131, 220, 255, 0.164);
+      }
+      img#binglogo {
+        width: 185px;
+        height: 100px;
+        margin: 30px;
+        margin-top: 20vh;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://1000logos.net/wp-content/uploads/2017/12/Bing-Logo-2020.png"
+      alt="Bing Logo"
+      id="binglogo"
+    />
+    <br />
+
+    <input
+      type="text"
+      name="searchbar"
+      id="searchbar"
+      placeholder="Explore the world"
+      onkeypress="access()"
+    />
+    <p>Inspired by <a href="https://youtu.be/fVKIQwnHVO4">bkly</a>'s concept</p>
+    <script>
+      function access() {
+        const input = window.document.querySelector("input#searchbar");
+        if (input != "") {
+          if (event.key === "Enter") {
+            window.open(`https://www.bing.com/search?q=${input.value}`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
